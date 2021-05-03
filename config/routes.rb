@@ -2,7 +2,11 @@ Rails.application.routes.draw do
   root 'homes#top'
   get '/about' => 'homes#about'
   
-  devise_for :users
+  devise_for :users, controllers: {
+    sessions: 'users/sessions',
+    passwords: 'users/passwords',
+    registrations: 'users/registrations'
+  }
   resources :users, except: [:new, :create, :destroy] do
     collection do
       get '/confirm_unsubscribe' => 'users#unsubscribe', as: '/confirm_unsubscribe'

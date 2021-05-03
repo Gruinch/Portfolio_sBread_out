@@ -1,15 +1,66 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>SbreadOut</title>
+    <meta charset="UTF-8" />
+    <title>sBread Out!</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-jJ2L/Ujk8jWEwtIXPFEk3X+f20QKnj4IIscn+JZzxqkbAUC79idDdiAhAi2E7czT" crossorigin="anonymous">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <%= yield %>
+      <div class="container-fluid h-100">
+        <div class="row h-90">
+          <div class="col-md-3">
+            <nav id="sidebar" class="d-md-block bg-light sidebar collapse">
+              <ul class="nav flex-column">
+                <% if user_signed_in? %>
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="/">TOP</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/about">ABOUT</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/users/sign_in">SIGN IN</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/users/sign_up">SIGN UP</a>
+                </li>
+                <% else %>
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="/">TOP</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/about">ABOUT</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/users/sign_in">MY PAGE</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/users/sign_up">SIGN OUT</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/users/sign_up">TIMELINE</a>
+                </li>
+                <% end %>
+              </ul>
+                <form class="d-flex">
+                  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                  <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+            </nav>
+          </div>
+          <main class="col-md-9">
+          <%= yield %>
+          </main>
+        </div>
+        <footer class="row h-10 footer">footer</footer>
+      </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-K09cMhJkkwNoZK1BRIJX6fQk06LqHSs8LdWAE24M/18F4NlePaltFx1cnB9wKwQX" crossorigin="anonymous"></script>
   </body>
 </html>
