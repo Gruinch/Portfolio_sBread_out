@@ -1,24 +1,49 @@
-# README
+# sBread out!!
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## サイト概要
+このサイトでは、ユーザーが訪れたパン屋さんに関して投稿することができます。
+また、パンの種類別（食パン、ベーグル、ハード系など）で検索が可能で、好みのパンに合わせてお店を探すことができます。
+ユーザー登録しなくても、投稿の閲覧は可能ですが、ユーザー登録をすることによって、他のユーザーをフォローしたり、気になるお店に関する投稿をマークできる
+「気になる登録」や、投稿を見てお店に実際に行ったことを投稿者に知らせることができる「行ったよ登録」、また、コメント機能が使えるようになります。
+本サイトの名前の由来は、広げるという意味の英語のSpread outとパンであるBreadを掛け合わせ、いろんな人がパンの情報を広めて楽しんで欲しいという思いを込めてこの名前をつけました
 
-Things you may want to cover:
 
-* Ruby version
+### サイトテーマ
+パン好きの人々が、パン屋さんについて情報交換し交流できるSNSサービスです。
 
-* System dependencies
 
-* Configuration
+### テーマを選んだ理由
+私はパンが大好きで、休みの日には行ったことのないパン屋さんを探すのが好きです。
+パン屋さんだけの情報は意外と少なく、インスタなどで探しても、有名なお店しか見つからず、新しいパン屋さんの開拓をするには情報を集めるのが難しいと感じています。
+パン好きの人は全国どこでも、必ず行ってみたいパン屋さんがあると思うので、国内でも海外でも関係なくいろんなパンの情報をシェアできるサイトがあると、パン好きにとって便利なツールになるのではと考えました。
+国別でパンにも個性があるので、日本国内のみならず、いろんなパンと出会えると楽しいと思います。
 
-* Database creation
+### ターゲットユーザ
+* パンが好きで、パン屋についての情報交換をしたい人
+* 食べるのが好きな20代から30代の人
 
-* Database initialization
 
-* How to run the test suite
+### 主な利用シーン
+* 行ったことのないパン屋を開拓したい時や、食べたことのないパンに出会いたい時
+* 旅先でパン屋さんを探したい時
 
-* Services (job queues, cache servers, search engines, etc.)
+## 設計書
 
-* Deployment instructions
+### 機能一覧
+<https://docs.google.com/spreadsheets/d/1WnIdBQralfhGLweEtDd14lxQyXRgsb0FHdjFapK2JBo/edit#gid=0>
 
-* ...
+## 開発環境
+- OS：Linux(CentOS)
+- 言語：HTML,CSS,JavaScript,Ruby,SQL
+- フレームワーク：Ruby on Rails
+- JSライブラリ：jQuery
+- 仮想環境：Vagrant,VirtualBox
+
+## 使用素材
+- Google Maps API
+- O-DAN:https://o-dan.net/ja/
+- Font Free:https://fontfree.me/
+- イラストAC:https://www.ac-illust.com/
+- designevo:https://www.designevo.com/
+- お名前.com:https://www.onamae.com/
+
