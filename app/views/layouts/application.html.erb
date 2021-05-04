@@ -17,34 +17,34 @@
             <nav id="sidebar" class="d-md-block bg-light sidebar collapse">
               <ul class="nav flex-column">
                 <% if user_signed_in? %>
-                <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="/">TOP</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="/about">ABOUT</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="/users/sign_in">SIGN IN</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="/users/sign_up">SIGN UP</a>
-                </li>
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="/">TOP</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/about">ABOUT</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/users/<%= current_user.id %>">MY PAGE</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/users/sign_out" data-method="delete" >SIGN OUT</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">TIMELINE</a>
+                  </li>
                 <% else %>
-                <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="/">TOP</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="/about">ABOUT</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="/users/sign_in">MY PAGE</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="/users/sign_up">SIGN OUT</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="/users/sign_up">TIMELINE</a>
-                </li>
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="/">TOP</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/about">ABOUT</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/users/sign_in">SIGN IN</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/users/sign_up">SIGN UP</a>
+                  </li>
                 <% end %>
               </ul>
                 <form class="d-flex">
