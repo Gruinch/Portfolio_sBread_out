@@ -5,16 +5,17 @@
     <title>sBread Out!</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-jJ2L/Ujk8jWEwtIXPFEk3X+f20QKnj4IIscn+JZzxqkbAUC79idDdiAhAi2E7czT" crossorigin="anonymous">
+    
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   </head>
 
   <body>
       <div class="container-fluid h-100">
-        <div class="row h-90">
+        <div class="row h-100">
           <div class="col-md-3">
-            <nav id="sidebar" class="d-md-block bg-light sidebar collapse">
+            <nav id="sidebar" class="d-md-block bg-light sidebar collapse h-75">
               <a class="navbar-brand" href="/">
                   <img src="/docs/4.2/assets/brand/bootstrap-solid.svg" width="30" height="30" alt="">
                 </a>
@@ -56,14 +57,15 @@
                 </form>
             </nav>
           </div>
-          <main class="col-md-9">
+          <main class="col-md-9 h-100">
+            <div class="container-fluid h-100">
           <%= yield %>
+            </div>
           </main>
         </div>
         <footer class="row h-10 footer">footer</footer>
       </div>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-K09cMhJkkwNoZK1BRIJX6fQk06LqHSs8LdWAE24M/18F4NlePaltFx1cnB9wKwQX" crossorigin="anonymous"></script>
   </body>
 </html>
