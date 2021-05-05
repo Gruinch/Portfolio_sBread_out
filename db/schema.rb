@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 2021_05_03_113132) do
     t.integer "user_id"
     t.string "title"
     t.text "body"
-    t.string "img"
+    t.string "post_img_id"
     t.float "rate"
     t.string "address"
     t.float "latitude"
@@ -63,7 +63,7 @@ ActiveRecord::Schema.define(version: 2021_05_03_113132) do
     t.datetime "remember_created_at"
     t.string "name"
     t.text "introduction"
-    t.string "img"
+    t.string "profile_img_id"
     t.boolean "is_deleted", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

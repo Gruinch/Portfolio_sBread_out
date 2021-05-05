@@ -4,7 +4,7 @@ class CreateArticles < ActiveRecord::Migration[5.2]
       t.integer :user_id
       t.string :title
       t.text :body
-      t.string :img
+      t.string :post_img_id
       t.float :rate
       t.string :address
       t.float :latitude
