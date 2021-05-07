@@ -11,59 +11,10 @@
   </head>
 
   <body>
-      <div class="container-fluid h-100">
-        <div class="row h-100">
-          <div class="col-md-3">
-            <nav id="sidebar" class="d-md-block bg-light sidebar collapse h-75">
-              <a class="navbar-brand" href="/">
-                  <img src="/docs/4.2/assets/brand/bootstrap-solid.svg" width="30" height="30" alt="">
-                </a>
-              <ul class="nav flex-column">
-                <% if user_signed_in? %>
-                  <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="/">TOP</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="/about">ABOUT</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="/users/<%= current_user.id %>">MY PAGE</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="/users/sign_out" data-method="delete" >SIGN OUT</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">TIMELINE</a>
-                  </li>
-                <% else %>
-                  <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="/">TOP</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="/about">ABOUT</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="/users/sign_in">SIGN IN</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="/users/sign_up">SIGN UP</a>
-                  </li>
-                <% end %>
-              </ul>
-                <form class="d-flex">
-                  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                  <button class="btn btn-outline-success" type="submit">Search</button>
-                </form>
-            </nav>
-          </div>
-          <main class="col-md-9 h-100">
-            <div class="container-fluid h-100">
-          <%= yield %>
-            </div>
-          </main>
-        </div>
-        <footer class="row h-10 footer">footer</footer>
-      </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <header></header>
+    <main>
+      <%= yield %>
+    </main>
+    <footer>footer</footer>
   </body>
 </html>

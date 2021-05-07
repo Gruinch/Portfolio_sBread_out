@@ -19,9 +19,25 @@
 
 
 html, body {
-  height: 100%;
   font-family: 'Kiwi Maru', serif;
   font-family: 'Kosugi Maru', sans-serif;
   font-family: 'Sawarabi Gothic', sans-serif;
 }
 
+.top-main {
+  width: 100%;
+}
+
+.bx-wrapper {
+  margin: 0 !important;
+  -moz-box-shadow: none !important;
+  -webkit-box-shadow: none !important;
+  box-shadow: none !important;
+  border: none !important;
+  background: none !important;
+}
+
+.bxslider img {
+  width: 100% !important;
+  height: auto !important;
+}

@@ -23,6 +23,8 @@
 $(function(){
 	 $('.bxslider').bxSlider({
 		auto: true,
-		slideWidth: 500,
+		mode: 'fade',
+		speed: 1000,
+		pager: false
 	});
 });
