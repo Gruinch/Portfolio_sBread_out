@@ -25,6 +25,6 @@ $(function(){
 		auto: true,
 		mode: 'fade',
 		speed: 1000,
-		pager: false
+		pager: false,
 	});
 });
