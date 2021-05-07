@@ -16,20 +16,19 @@
 @import "bootstrap";
 @import 'font-awesome-sprockets';
 @import 'font-awesome';
+@import url('https://fonts.googleapis.com/css2?family=Itim&family=Kiwi+Maru&family=M+PLUS+Rounded+1c:wght@100&family=Pangolin&display=swap');
 
 html {
   position: relative;
   min-height: 100%;
 }
 
-html, body {
-  font-family: 'Kiwi Maru', serif;
-  font-family: 'Kosugi Maru', sans-serif;
-  font-family: 'Sawarabi Gothic', sans-serif;
-}
-
 body {
   margin-bottom: 60px;
+}
+
+main {
+  padding-top: 70px;
 }
 
 footer {
@@ -42,7 +41,7 @@ footer {
 .footer-text {
   text-align: center;
 }
-
+/* TOPページ */
 .top-main {
   width: 100%;
 }
@@ -59,4 +58,23 @@ footer {
 .bxslider img {
   width: 100% !important;
   height: auto !important;
+}
+
+/* ABOUT */
+.about-main {
+  height: 1000px;
+}
+.contents-header {
+  background-color:rgba(255,255,255,0.7);
+  background-blend-mode:lighten;
+  background-image: url(about-background.jpg) ;
+  background-size: cover;
+  background-position: center;
+  height: 20%;
+}
+
+.about-text, .about-link {
+  text-align: center;
+  margin: 30px 0;
+  padding: 15px;
 }
