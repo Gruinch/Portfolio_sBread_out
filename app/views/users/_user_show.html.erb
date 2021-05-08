@@ -1,25 +1,22 @@
-<div class="contents-header">
-  <h1><%= current_user.name %></h1>
-</div>
-<div  class="profile-main">
-<div class="profile-element">
+<div  class="profile-main-fixed">
+<div class="profile-element-fixed">
   <div class="profile_img">
-  <%= attachment_image_tag @user, :profile_img, :fill, 300, 300, fallback: "no_image.jpg", class:"rounded-circle"%>
+  <%= attachment_image_tag @user, :profile_img, :fill, 100, 100, fallback: "no_image.jpg", class:"rounded-circle"%>
   </div>
 </div>
-<div class="profile-element">
-    <label class="profile-detail">ユーザー名</label>
-    <div class="profile-detail"><%= @user.name %></div>
+<div class="profile-element-fixed">
+    <label class="profile-detail-fixed">ユーザー名</label>
+    <div class="profile-detail-fixed"><%= @user.name %></div>
 </div>
-<div class="profile-element">
-    <label class="profile-detail">自己紹介</label>
-  <div class="profile-detail"><%= @user.introduction %></div>
+<div class="profile-element-fixed">
+    <label class="profile-detail-fixed">自己紹介</label>
+  <div class="profile-detail-fixed"><%= @user.introduction %></div>
 </div>
 <% if @user.id == current_user.id %>
-<div class="profile-element">
-    <div class="profile-detail"><%= link_to "", edit_user_path(current_user.id), class:"btn btn-outline-secondary fas fa-user-cog" %></div>
-    <div class="profile-detail"><%= link_to "新規投稿", new_article_path, class:"btn btn-outline-secondary fas fa-bread-slice" %></div>
-    <div class="profile-detail"><%= link_to "気になるリスト", interests_path, class:"btn btn-outline-secondary fas fa-list" %></div>
+<div class="profile-element-fixed">
+    <div class="profile-detail-fixed"><%= link_to "", edit_user_path(current_user.id), class:"btn btn-outline-secondary fas fa-user-cog" %></div>
+    <div class="profile-detail-fixed"><%= link_to "", new_article_path, class:"btn btn-outline-secondary fas fa-bread-slice" %></div>
+    <div class="profile-detail-fixed"><%= link_to "", interests_path, class:"btn btn-outline-secondary fas fa-list" %></div>
 </div>
 </div>
 <% end %>

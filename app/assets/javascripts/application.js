@@ -11,6 +11,7 @@
 // about supported directives.
 //
 //= require jquery
+//= require jquery.raty.js
 //= require popper
 //= require bootstrap-sprockets
 //
@@ -28,3 +29,5 @@ $(function(){
 		pager: false,
 	});
 });
+
+

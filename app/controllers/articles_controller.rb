@@ -1,9 +1,14 @@
 class ArticlesController < ApplicationController
   def new
     @article_new = Article.new
+    @user = current_user
   end
 
   def create
+    @article_new = Article.new(article_params)
+    @article_new.user_id = current_user.id
+    @article_new.save
+    redirect_to user_path(current_user)
   end
 
   def index
@@ -20,11 +25,11 @@ class ArticlesController < ApplicationController
 
   def destroy
   end
-  
+
   private
 
   def article_params
-    params.require(:article).permit(:user_id, :title, :body, :post_img_id, :rate, :address, :latitude, :longtitude)
+    params.require(:article).permit(:user_id, :title, :body, :post_img, :rate, :address, :latitude, :longtitude)
   end
 
 end
