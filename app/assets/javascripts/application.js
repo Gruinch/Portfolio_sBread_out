@@ -11,16 +11,16 @@
 // about supported directives.
 //
 //= require jquery
-//= require jquery.raty.js
 //= require popper
 //= require bootstrap-sprockets
 //
 //= require rails-ujs
+//= require jquery.raty.js
 //= require activestorage
 //= require turbolinks
 //= require_tree .
 
-
+// スライドショー//
 $(function(){
 	 $('.bxslider').bxSlider({
 		auto: true,
@@ -30,11 +30,3 @@ $(function(){
 	});
 });
 
-
-  $('.article-rate').raty({
-    readOnly: true,
-    score: function() {
-      return $(this).attr('data-score');
-    },
-    path: '/assets/'
-  });

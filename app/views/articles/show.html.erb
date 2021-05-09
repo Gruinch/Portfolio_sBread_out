@@ -11,8 +11,21 @@
         </tr>
         <tr>
           <th scope="row">評価</th>
-          <td><div id=star-<%= @article.rate %>><%= @article.rate %></div>
+          <td><div id="star-<%= @article.id %>"></div>
           </td>
+            <!--評価表示-->
+          <script>
+            $ ('#star-<%= @article.id %>').raty({
+              score : '<%= @article.rate %>',
+              readOnly :true,
+              size : 36,
+              starOff :  '<%= asset_path('star-off.png') %>',
+              starOn : '<%= asset_path('star-on.png') %>',
+              starHalf : '<%= asset_path('star-half.png') %>',
+              half : true,
+            });
+          </script>
+
         </tr>
         <tr>
           <th scope="row">投稿者</th>
@@ -30,18 +43,6 @@
       </tbody>
     </table>
   </div>
-          <!--評価星表示-->
-          <script>
-           $ ('#star-<%= @article.rate %>').raty({
-              readOnly :true,
-              size : 36,
-              starOff :  '<%= asset_path('star-off.png') %>',
-              starOn : '<%= asset_path('star-on.png') %>',
-              starHalf : '<%= asset_path('star-half.png') %>',
-              half : true,
-              score : '<%= @article.rate %>',
-          });
-          </script>
 
   <hr>
   <div class="article-detail">
