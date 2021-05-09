@@ -8,7 +8,7 @@ class ArticlesController < ApplicationController
     @article_new = Article.new(article_params)
     @article_new.user_id = current_user.id
     @article_new.save
-    redirect_to user_path(current_user)
+    redirect_to article_path(@article_new)
   end
 
   def index

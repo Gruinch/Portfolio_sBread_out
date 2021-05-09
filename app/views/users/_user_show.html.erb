@@ -1,7 +1,7 @@
 <div  class="profile-main-fixed">
 <div class="profile-element-fixed">
   <div class="profile_img">
-  <%= attachment_image_tag @user, :profile_img, :fill, 100, 100, fallback: "no_image.jpg", class:"rounded-circle"%>
+  <%= attachment_image_tag @user, :profile_img, fallback: "no_image.jpg", size: "100x100", class:"rounded-circle"%>
   </div>
 </div>
 <div class="profile-element-fixed">

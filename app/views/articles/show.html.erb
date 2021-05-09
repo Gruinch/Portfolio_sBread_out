@@ -3,3 +3,32 @@
 <%= @article.body %>
 <%= @article.rate %>
 <%= @article.address %>
+<div id="map" style="width:620px; height:400px"></div>
+<script type="text/javascript">
+    function initMap() {
+      var test ={lat: <%= @article.latitude %>, lng: <%= @article.longtitude %>};
+      var opts = {
+        zoom: 15,
+        center: new google.maps.LatLng(35.709984,139.810703)
+      };
+      var map = new google.maps.Map(document.getElementById("map"), opts);
+    }
+      var contentString = '住所：<%= @article.address %>';
+      var infowindow = new google.maps.InfoWindow({
+        content: contentString
+      });
+      var marker = new google.maps.Marker({
+                  position:test,
+                  map: map,
+                  title: contentString
+                 });
+           marker.addListener('click', function() {
+             infowindow.open(map, marker);
+           });
+        }
+</script>
+
+
+<script async defer
+  src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['GOOGLE_MAP_API_KEY'] %>&callback=initMap">
+</script>
