@@ -6,6 +6,9 @@
     <%= render 'users/user_show' %>
   </div>
   <div class="contents-bottom">
+    <div class="article-new-field">
+      <h5>投稿フォーム</h5>
+    </div>
     <%= form_with model:@article_new, url:'/articles', local:true do |f| %>
     <div class="article-new-field">
       <label class="article-new-detail">店名<label>
