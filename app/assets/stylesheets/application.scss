@@ -152,7 +152,9 @@ footer {
 .article-detail {
   display: flex;
 }
-
+.article-body, .article-map {
+  margin: 15px;
+}
 .dates {
   flost: right;
 }

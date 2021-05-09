@@ -5,54 +5,5 @@
   <div class="users_profile">
     <%= render 'users/user_show' %>
   </div>
-  <div class="contents-bottom">
-    <div class="article-new-field">
-      <h5>投稿フォーム</h5>
-    </div>
-    <%= form_with model:@article_new, url:'/articles', local:true do |f| %>
-    <div class="article-new-field">
-      <label class="article-new-detail">店名<label>
-        <div class="article-new-detail">
-          <%= f.text_field :title, class:"form-control" %>
-        </div>
-    </div>
-    <div class="article-new-field">
-      <label class="article-new-detail">本文</label>
-        <div class="article-new-detail">
-          <%= f.text_area :body, class:"form-control", placeholder:"おすすめのパンや、お店の雰囲気など投稿してみましょう！" %>
-        </div>
-    </div>
-    <div class="article-new-field">
-      <label class="article-new-detail">住所</label>
-        <div class="article-new-detail">
-          <%= f.text_field :address, class:"form-control" %>
-        </div>
-    </div>
-    <div class="article-new-field">
-      <label class="article-new-detail">評価</label>
-      <div class="article-new-detail", id="star">
-
-        <script>
-          $('#star').raty({
-            size     : 36,
-            starOff:  '<%= asset_path('star-off.png') %>',
-            starOn : '<%= asset_path('star-on.png') %>',
-            starHalf: '<%= asset_path('star-half.png') %>',
-            scoreName: 'article[rate]',
-            half: true,
-          });
-          </script>
-      </div>
-    </div>
-    <div class="article-new-field">
-      <label class="article-new-detail">写真</label>
-        <div class="article-new-detail">
-          <%= f.attachment_field :post_img %>
-        </div>
-    </div>
-      <div class="submit-button">
-        <%= f.submit '投稿する', class:"btn btn-outline-primary" %>
-      </div>
-  </div>
-    <% end %>
+  <%= render 'article_detail' %>
 </div>

@@ -1,14 +1,14 @@
 class ArticlesController < ApplicationController
   def new
-    @article_new = Article.new
+    @article = Article.new
     @user = current_user
   end
 
   def create
-    @article_new = Article.new(article_params)
-    @article_new.user_id = current_user.id
-    @article_new.save
-    redirect_to article_path(@article_new)
+    @article = Article.new(article_params)
+    @article.user_id = current_user.id
+    @article.save
+    redirect_to article_path(@article)
   end
 
   def index
@@ -19,12 +19,19 @@ class ArticlesController < ApplicationController
   end
 
   def edit
+    @article = Article.find(params[:id])
   end
 
   def update
+    @article = Article.find(params[:id])
+    @article.update(article_params)
+    redirect_to article_path(@article)
   end
 
   def destroy
+    @article = Article.find(params[:id])
+    @article.destroy
+    redirect_to articles_path
   end
 
   private
