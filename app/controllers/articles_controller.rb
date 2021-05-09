@@ -30,7 +30,7 @@ class ArticlesController < ApplicationController
   private
 
   def article_params
-    params.require(:article).permit(:user_id, :title, :body, :post_img, :rate, :address, :latitude, :longtitude)
+    params.require(:article).permit(:user_id, :title, :body, :post_img, :rate, :address, :latitude, :longitude)
   end
 
 end

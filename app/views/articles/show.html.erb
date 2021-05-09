@@ -1,18 +1,68 @@
-<h1>Articles#show</h1>
-<%= @article.title %>
-<%= @article.body %>
-<%= @article.rate %>
-<%= @article.address %>
+<div class="show-main">
+  <div class="article-detail">
+    <div class="image-show">
+      <%= attachment_image_tag @article, :post_img, fallback: "article_no_image.png", size:"300x300" %>
+    </div>
+    <table class="table table-borderless">
+      <tbody>
+        <tr>
+          <th scope="row">店名</th>
+          <td><%= @article.title %></td>
+        </tr>
+        <tr>
+          <th scope="row">評価</th>
+          <td><div id=star-<%= @article.rate %>><%= @article.rate %></div>
+          </td>
+        </tr>
+        <tr>
+          <th scope="row">投稿者</th>
+          <td><%= link_to @article.user.name, user_path(@article.user) %></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+          <!--評価星表示-->
+          <script>
+           $ ('#star-<%= @article.rate %>').raty({
+              readOnly :true,
+              size : 36,
+              starOff :  '<%= asset_path('star-off.png') %>',
+              starOn : '<%= asset_path('star-on.png') %>',
+              starHalf : '<%= asset_path('star-half.png') %>',
+              half : true,
+              score : '<%= @article.rate %>',
+          });
+          </script>
+
+  <hr>
+  <div class="article-detail">
+    <div class="card article-body">
+      <div class="card-body">
+        <p class="article.body">
+          <%= @article.body %>
+        </p>
+        <hr>
+        <p>住所
+          <%= @article.address %>
+        </p>
+        <hr>
+        <p class="dates">
+          投稿日<%= @article.created_at.strftime('%Y/%m/%d') %>
+        </p>
+        <a href="#" class="card-link">気になる</a>
+        <a href="#" class="card-link">行ったよ</a>
+      </div>
+    </div>
 <div id="map" style="width:620px; height:400px"></div>
 <script type="text/javascript">
     function initMap() {
-      var test ={lat: <%= @article.latitude %>, lng: <%= @article.longtitude %>};
-      var opts = {
-        zoom: 15,
-        center: new google.maps.LatLng(35.709984,139.810703)
-      };
-      var map = new google.maps.Map(document.getElementById("map"), opts);
-    }
+      var test ={lat: <%= @article.latitude %>, lng: <%= @article.longitude %>};
+      var map = new google.maps.Map(document.getElementById("map"),
+        { zoom: 15,
+        center: test
+        });
+      var transitLayer = new google.maps.TransitLayer();
+        transitLayer.setMap(map);
       var contentString = '住所：<%= @article.address %>';
       var infowindow = new google.maps.InfoWindow({
         content: contentString
@@ -32,3 +82,5 @@
 <script async defer
   src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['GOOGLE_MAP_API_KEY'] %>&callback=initMap">
 </script>
+</div>
+</div>

@@ -98,10 +98,6 @@ footer {
   text-align: right;
 }
 
-.contents-main {
-  width: 70%;
-  margin: 0 auto;
-}
 /*プロフィール固定用*/
 .profile-main-fixed {
   height: auto;
@@ -146,3 +142,17 @@ footer {
   text-align: center;
 }
 
+/*Article show*/
+
+.show-main {
+  width: 70%;
+  margin: 0 auto;
+}
+
+.article-detail {
+  display: flex;
+}
+
+.dates {
+  flost: right;
+}

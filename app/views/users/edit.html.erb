@@ -5,7 +5,7 @@
   <%= form_with model:@user, local:true do |f| %>
   <div class="profile-element">
     <label class="profile-detail">プロフィール写真</label>
-    <div class="image-show"><%= attachment_image_tag @user, :profile_img, :fill, 300, 300, fallback: "no_image.jpg", class:"rounded-circle" %></div>
+    <div class="image-show"><%= attachment_image_tag @user, :profile_img, fallback: "no_image.jpg", size:"100x100", class:"rounded-circle" %></div>
   </div>
     <div class="image-field"><%= f.attachment_field :profile_img %></div>
   <div class="profile-element">

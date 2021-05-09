@@ -8,7 +8,7 @@ class CreateArticles < ActiveRecord::Migration[5.2]
       t.float :rate
       t.string :address
       t.float :latitude
-      t.float :longtitude
+      t.float :longitude
 
       t.timestamps
     end
