@@ -14,8 +14,9 @@ Rails.application.routes.draw do
     end
   end
   
-  resources :articles
-  resources :comments, except: [:show]
+  resources :articles do
+    resources :comments, only: [:create, :destroy]
+  end
   resources :likes, only: [:create, :destroy]
   resources :interests, only: [:create, :index, :destroy]
   resources :relationships, only: [:create, :index, :destroy]

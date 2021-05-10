@@ -8,5 +8,11 @@ class User < ApplicationRecord
  has_many :comments, dependent: :destroy
  has_many :interests, dependent: :destroy
  has_many :likes, dependent: :destroy
+ 
+ #すでにいいね
+ def already_liked?(article)
+   self.likes.exists?(article_id: article.id)
+ end
+ 
  attachment :profile_img
 end

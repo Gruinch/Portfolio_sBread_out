@@ -63,6 +63,20 @@
         <a href="#" class="card-link">気になる</a>
         <a href="#" class="card-link">行ったよ</a>
       </div>
+<div class="comments">
+<p>コメント件数：<%= @article.comments.count %></p>
+<% @article.comments.each do |comments| %>
+  <%= comments.user.name %>
+  <%= comments.created_at.strftime('%Y/%m/%d') %><%= comments.body %>
+<% end %>
+</div>
+<div class="new-comment">
+<%= form_with(model:[@article, @comment], local: true) do |f| %>
+  <%= f.text_area :body, rows:'5',placeholder: "コメントをここに" %>
+  <%= f.submit "送信する" %>
+<% end %>
+</div>
+
     </div>
 
     <div class="article-map">
