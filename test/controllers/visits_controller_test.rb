@@ -1,13 +1,13 @@
 require 'test_helper'
 
-class LikesControllerTest < ActionDispatch::IntegrationTest
+class VisitsControllerTest < ActionDispatch::IntegrationTest
   test "should get create" do
-    get likes_create_url
+    get visits_create_url
     assert_response :success
   end
 
   test "should get destroy" do
-    get likes_destroy_url
+    get visits_destroy_url
     assert_response :success
   end
 

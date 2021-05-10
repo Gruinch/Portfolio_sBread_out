@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'visits/create'
+  get 'visits/destroy'
   root 'homes#top'
   get '/about' => 'homes#about'
   
