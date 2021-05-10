@@ -7,7 +7,7 @@ class User < ApplicationRecord
  has_many :articles, dependent: :destroy
  has_many :comments, dependent: :destroy
  has_many :interests, dependent: :destroy
- has_many :likes, dependent: :destroy
+ has_many :visits, dependent: :destroy
  
  #すでにいいね
  def already_liked?(article)
