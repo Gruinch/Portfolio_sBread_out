@@ -64,7 +64,10 @@
         <div id="interests_button_<%= @article.id %>">
           <%= render 'interests/interest', locals: { article: @article, interest: @interest } %>
         </div>
-        <a href="#" class="card-link">行ったよ</a>
+        <!--行ったよボタン-->
+        <div id="visits_button_<%= @article.id %>">
+          <%= render 'visits/visit', locals: { article: @article, visit: @visit } %>
+        </div>
       </div>
 <div class="comments">
 <p>コメント件数：<%= @article.comments.count %></p>

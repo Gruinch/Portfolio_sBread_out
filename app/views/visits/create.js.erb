@@ -1,0 +1,1 @@
+$('#visits_button_<%= @article.id %>').html("<%= j(render 'visits/visit', locals: {article: @article, visit: @visit }) %>");
