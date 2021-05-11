@@ -60,7 +60,10 @@
           投稿日
         </p>
         <p><%= @article.created_at.strftime('%Y/%m/%d') %></p>
-        <a href="#" class="card-link">気になる</a>
+        <!--気になるボタン-->
+        <div id="interests_button_<%= @article.id %>">
+          <%= render 'interests/interest', locals: { article: @article, interest: @interest } %>
+        </div>
         <a href="#" class="card-link">行ったよ</a>
       </div>
 <div class="comments">

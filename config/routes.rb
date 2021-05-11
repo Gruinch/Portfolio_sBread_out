@@ -18,7 +18,7 @@ Rails.application.routes.draw do
 
   resources :articles do
     resources :comments, only: [:create, :destroy]
-    resources :interests, only: [:create, :index, :destroy]
+    resources :interests, only: [:create, :destroy]
     resource :visits, only: [:create, :destroy]
   end
   resources :relationships, only: [:create, :index, :destroy]
