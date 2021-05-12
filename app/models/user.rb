@@ -22,7 +22,7 @@ class User < ApplicationRecord
 
  #フォローメソッド
 def follow(user)
-  following_relationships.create!(user_id: user.id)
+  following_relationships.create!(user_id: useri.d)
 end
 
  #アンフォローメソッド
