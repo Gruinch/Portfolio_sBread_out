@@ -8,14 +8,3 @@
     <% end %>
   </div>
 <% end %>
-
-<!--フォローボタン-->
-<%= form_with url: relationships_path, remote: true do |f| %>
-  <%= f.hidden_field :following_id, :value => @user.id %>
-  <%= f.submit "フォローする", class: "btn btn-outline-secondary" %>
-<% end %>
-
-<!--フォロー解除ボタン-->
-<%= form_with url: relationships_path(@user), method: :delete, remote: true do |f| %>
-  <%= f.submit "", class: "btn btn-outline-secondary" %>
-<% end %>
