@@ -1,12 +1,12 @@
 class RelationshipsController < ApplicationController
-  
+
   def create
-    @user = User.find(params[:user_id])
+    @user = User.find(params[:following_id])
     current_user.follow(@user)
   end
 
   def index
-    
+
   end
 
   def destroy

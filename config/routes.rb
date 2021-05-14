@@ -18,7 +18,7 @@ Rails.application.routes.draw do
       patch '/withdraw' => 'users#withdraw', as: '/withdraw'
     end
      member do
-      get :user, :followers
+      get :following, :followers
     end
 
   end
