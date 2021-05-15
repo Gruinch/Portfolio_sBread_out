@@ -45,76 +45,97 @@
   </div>
 
   <hr>
-  <div class="article-detail">
-    <div class="card article-body">
+  
+    <article class="card article-body">
       <div class="card-body">
-        <p class="article.body">
+        <p class="article-body">
           <%= @article.body %>
         </p>
+        
         <hr>
-        <p class="fw-bold">住所</p>
-        <p><%= @article.address %>
-        </p>
-        <hr>
-        <p class="fw-bold">
-          投稿日
-        </p>
-        <p><%= @article.created_at.strftime('%Y/%m/%d') %></p>
-        <!--気になるボタン-->
-        <div id="interests_button_<%= @article.id %>">
-          <%= render 'interests/interest', locals: { article: @article, interest: @interest } %>
+
+        <div class="article-detail">
+          <p class="article-body">
+            住所
+          </p>
+          <p class="article-body">
+            <%= @article.address %>
+          </p>
         </div>
-        <!--行ったよボタン-->
-        <div id="visits_button_<%= @article.id %>">
-          <%= render 'visits/visit', locals: { article: @article, visit: @visit } %>
-        </div>
+        <div class="article-map">
+          <div id="map" style="width:500px; height:400px"></div>
+          <script type="text/javascript">
+              function initMap() {
+                var test ={lat: <%= @article.latitude %>, lng: <%= @article.longitude %>};
+                var map = new google.maps.Map(document.getElementById("map"),
+                  { zoom: 15,
+                  center: test
+                  });
+                var transitLayer = new google.maps.TransitLayer();
+                  transitLayer.setMap(map);
+                var contentString = '住所：<%= @article.address %>';
+                var infowindow = new google.maps.InfoWindow({
+                  content: contentString
+                });
+                var marker = new google.maps.Marker({
+                            position:test,
+                            map: map,
+                            title: contentString
+                           });
+                     marker.addListener('click', function() {
+                       infowindow.open(map, marker);
+                     });
+                  }
+          </script>
       </div>
-<div class="comments">
-<p>コメント件数：<%= @article.comments.count %></p>
-<% @article.comments.each do |comments| %>
-  <%= comments.user.name %>
-  <%= comments.created_at.strftime('%Y/%m/%d') %><%= comments.body %>
-<% end %>
-</div>
-<div class="new-comment">
-<%= form_with(model:[@article, @comment], local: true) do |f| %>
-  <%= f.text_area :body, rows:'5',placeholder: "コメントをここに" %>
-  <%= f.submit "送信する" %>
-<% end %>
-</div>
-
+      
+          <hr>
+          <div class="article-detail">
+            <p class="article-body">
+              投稿日
+            </p>
+            <p class="article-body">
+              <%= l @article.created_at, format: :long %>
+            </p>
+          </div>
+          <div class="article-detail">
+            <!--気になるボタン-->
+            <div id="interests_button_<%= @article.id %>">
+              <p class="article-body">
+                <%= render 'interests/interest', locals: { article: @article, interest: @interest } %>
+              </p>
+            </div>
+            <!--行ったよボタン-->
+            <div id="visits_button_<%= @article.id %>">
+              <p class="article-body">
+                <%= render 'visits/visit', locals: { article: @article, visit: @visit } %>
+              </p>
+            </div>
+          </div>
+          <div class="comments">
+          <p>コメント件数：<%= @article.comments.count %></p>
+          <% @article.comments.each do |comments| %>
+          <p class="article-body">
+            <%= link_to comments.user.name, user_path(comments.user)%>
+          </p>
+          <p class="article-body">
+            <%= comments.body %>
+          </p>
+          <p class="article-body">
+            <%= l comments.created_at, format: :long %>
+          </p>
+          <% end %>
+          </div>
+        </div>
+      </article>
+    <div class="new-comment">
+      <%= form_with(model:[@article, @comment], local: true) do |f| %>
+        <%= f.text_area :body, rows:'5',placeholder: "コメントをここに", class:"form-control" %>
+        <%= f.submit "送信する", class:"btn btn-success" %>
+      <% end %>
     </div>
-
-    <div class="article-map">
-      <div id="map" style="width:500px; height:400px"></div>
-      <script type="text/javascript">
-          function initMap() {
-            var test ={lat: <%= @article.latitude %>, lng: <%= @article.longitude %>};
-            var map = new google.maps.Map(document.getElementById("map"),
-              { zoom: 15,
-              center: test
-              });
-            var transitLayer = new google.maps.TransitLayer();
-              transitLayer.setMap(map);
-            var contentString = '住所：<%= @article.address %>';
-            var infowindow = new google.maps.InfoWindow({
-              content: contentString
-            });
-            var marker = new google.maps.Marker({
-                        position:test,
-                        map: map,
-                        title: contentString
-                       });
-                 marker.addListener('click', function() {
-                   infowindow.open(map, marker);
-                 });
-              }
-      </script>
-
 
       <script async defer
         src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['GOOGLE_MAP_API_KEY'] %>&callback=initMap">
       </script>
-    </div>
   </div>
-</div>

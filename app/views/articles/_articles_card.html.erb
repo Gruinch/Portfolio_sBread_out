@@ -7,7 +7,7 @@
         <p class="card-text"><%= article.body %></p>
         <hr />
         <p class="card-text">posted by<%= link_to article.user.name, user_path(article.user) %></p>
-        <p class="card-text"><%= article.created_at %></p>
+        <p class="card-text"><%= l article.created_at, format: :long %></p>
       </div>
     </div>
   <% end %>

@@ -24,7 +24,6 @@
 <hr class="cp_hr02 profile-element" />
 <% if @user.id == current_user.id %>
 <div class="profile-element">
-    <div class="profile-detail"><%= link_to フォロワー, following_user_path(current_user.id) %></div>
     <div class="profile-detail"><%= link_to "", edit_user_path(current_user.id), class:"btn btn-outline-secondary fas fa-user-cog" %></div>
     <div class="profile-detail"><%= link_to "新規投稿", new_article_path, class:"btn btn-outline-secondary fas fa-bread-slice" %></div>
     <div class="profile-detail"><%= link_to "気になる一覧", interests_users_path, class:"btn btn-outline-secondary fas fa-bread-slice" %></div>

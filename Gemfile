@@ -72,3 +72,4 @@ gem "geocoder"
 gem "dotenv-rails"
 gem 'pry-rails'
 gem "ransack"
+gem 'i18n_generators'

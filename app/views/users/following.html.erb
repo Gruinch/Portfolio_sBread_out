@@ -1,7 +1,8 @@
+<div class="contents-header">
+  <h1>フォローしているユーザーの投稿</h1>
+</div>
+<div class="contents-main">
+<section>
 <%= render "articles/articles_card",articles: @articles %>
-<div class="following-users">
-<% @users.each do |user| %>
-  <%= attachment_image_tag user, :profile_img, fallback: "no_image.jpg", size: "100x100", class:"rounded-circle"%>
-  <%= link_to user.name, user_path(user) %>
-<% end %>
+</section>
 </div>

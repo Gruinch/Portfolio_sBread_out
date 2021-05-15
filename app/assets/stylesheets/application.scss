@@ -168,11 +168,10 @@ footer {
   display: flex;
   flex-wrap: wrap;
   width: auto;
-
+  margin: 0 auto;
 }
 
 .article-card {
-  align-items: flex-start;
   width: 300px;
   height: 400px;
   margin: 15px;
@@ -190,7 +189,4 @@ footer {
 }
 .article-body, .article-map {
   margin: 15px;
-}
-.dates {
-  flost: right;
 }
