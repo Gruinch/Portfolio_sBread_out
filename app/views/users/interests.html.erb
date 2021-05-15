@@ -1,5 +1,11 @@
-<h1>気になる一覧</h1>
-<% current_user.interests_articles.each do |article| %>
-<%= link_to article.title, article_path(article) %>
-<%= article.user.name %>
-<% end %>
+<div class="contents-header">
+  <h1>気になる一覧</h1>
+</div>
+
+<div class="contents-main" >
+
+<%= render "user_show" %>
+<div class="contents-bottom">
+  <%= render "articles/articles_card", articles: @articles %>
+</div>
+</div>

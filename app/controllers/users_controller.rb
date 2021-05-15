@@ -15,6 +15,10 @@ class UsersController < ApplicationController
     redirect_to user_path(current_user)
   end
 
+  def interests
+    @user = current_user
+    @articles = current_user.interests_articles
+  end
   def unsubscribe
   end
 
@@ -25,8 +29,8 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @users = @user.following
     render 'show_follow'
-  end 
-  
+  end
+
   def followers
     @user = User.find(params[:id])
     @users = @user.followers
