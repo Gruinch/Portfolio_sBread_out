@@ -20,13 +20,4 @@
 //= require turbolinks
 //= require_tree .
 
-// スライドショー//
-$(function(){
-	 $('.bxslider').bxSlider({
-		auto: true,
-		mode: 'fade',
-		speed: 1000,
-		pager: false,
-	});
-});
 
