@@ -1,6 +1,3 @@
-<% @search_articles.each do |article| %>
-  <%= article.title %>
-  <%= article.body %>
-  <%= article.user.name %>
-  <%= article.created_at %>
-<% end %>
+<div class="contents-main">
+<%= render "articles/articles_card",articles: @articles %>
+</div>

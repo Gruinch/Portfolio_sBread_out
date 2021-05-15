@@ -19,6 +19,7 @@ class UsersController < ApplicationController
     @user = current_user
     @articles = current_user.interests_articles
   end
+  
   def unsubscribe
   end
 
@@ -28,7 +29,7 @@ class UsersController < ApplicationController
   def following
     @user = User.find(params[:id])
     @users = @user.following
-    render 'show_follow'
+    @articles = Article.where(user_id: [current_user.id, *current_user.following_ids]).order(created_at: :desc)
   end
 
   def followers
