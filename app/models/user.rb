@@ -7,6 +7,7 @@ class User < ApplicationRecord
  has_many :articles, dependent: :destroy
  has_many :comments, dependent: :destroy
  has_many :interests, dependent: :destroy
+ has_many :interests_articles, through: :interests, source: :article
  has_many :visits, dependent: :destroy
 
  #following機能について

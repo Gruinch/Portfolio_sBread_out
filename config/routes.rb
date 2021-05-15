@@ -1,9 +1,4 @@
 Rails.application.routes.draw do
-  get 'relationships/create'
-  get 'relationships/destroy'
-  get 'relationships/index'
-  get 'visits/create'
-  get 'visits/destroy'
   root 'homes#top'
   get '/about' => 'homes#about'
 
@@ -16,6 +11,7 @@ Rails.application.routes.draw do
     collection do
       get '/confirm_unsubscribe' => 'users#unsubscribe', as: '/confirm_unsubscribe'
       patch '/withdraw' => 'users#withdraw', as: '/withdraw'
+      get :interests
     end
      member do
       get :following, :followers
@@ -27,7 +23,7 @@ Rails.application.routes.draw do
 
   resources :articles do
     resources :comments, only: [:create, :destroy]
-    resources :interests, only: [:create, :destroy]
+    resources :interests, only: [:create, :destroy, :index]
     resource :visits, only: [:create, :destroy]
   end
 

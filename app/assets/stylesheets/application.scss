@@ -34,6 +34,7 @@ body {
 }
 
 main {
+  width: 100%;
   padding-top: 70px;
   height: auto;
 }
@@ -48,6 +49,13 @@ footer {
 .footer-text {
   text-align: center;
 }
+/*点線*/
+.cp_hr02 {
+	border-width: 1px 0 0 0;
+	border-style: dashed;
+	border-color: #ffb300;
+}
+
 /* TOPページ */
 .top-main {
   width: 100%;
@@ -76,20 +84,22 @@ footer {
 
 /* User プロフィールページ */
 .profile-main {
-  height: 80%;
+  height: auto;
   margin-top: 30px;
 }
 
 .profile-element {
   display: flex;
-  justify-content:space-between;
+  justify-content: center;
   height: auto;
-  width: 40%;
+  width: 70%;
   margin: 0 auto;
 }
 
 .profile-detail {
-  padding: 50px 50px;
+  width: auto;
+  padding: 15px 15px;
+  line-height: auto;
 }
 
 .image-field {
@@ -97,6 +107,15 @@ footer {
   margin: 0 auto;
   text-align: right;
 }
+
+.profile-detail-introduce {
+  width: 150px;
+  height: 70px;
+  line-height: 70px;
+}
+
+/*プロフィールページ投稿一覧*/
+
 
 /*プロフィール固定用*/
 .profile-main-fixed {
@@ -140,6 +159,21 @@ footer {
 
 .submit-button {
   text-align: center;
+}
+
+/*Article index*/
+.article-index {
+  display: flex;
+  flex-wrap: wrap;
+  width: auto;
+
+}
+
+.article-card {
+  align-items: flex-start;
+  width: 300px;
+  height: 300px;
+  margin: 15px;
 }
 
 /*Article show*/
