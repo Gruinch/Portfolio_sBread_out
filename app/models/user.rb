@@ -3,6 +3,7 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+ attachment :profile_img
 
  has_many :articles, dependent: :destroy
  has_many :comments, dependent: :destroy
@@ -42,6 +43,9 @@ end
    self.visits.exists?(article_id: article.id)
  end
 
+#退会済みのユーザーのログインをさせない
+ def active_for_authentication?
+   super && (self.is_deleted == false)
+ end
 
- attachment :profile_img
 end
