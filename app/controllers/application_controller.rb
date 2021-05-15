@@ -12,9 +12,9 @@ class ApplicationController < ActionController::Base
   end
   #投稿記事検索
   before_action :set_search
-  
+
   def set_search
     @search = Article.ransack(params[:q])
-    @search_articles = @search.result(distinct: true)
   end
+
 end

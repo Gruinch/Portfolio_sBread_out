@@ -12,7 +12,10 @@ class ArticlesController < ApplicationController
   end
 
   def index
-      @articles = Article.all
+    @articles = Article.all
+    if @search
+    @articles = @search.result(distinct: true)
+    end
   end
 
   def show

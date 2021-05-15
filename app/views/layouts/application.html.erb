@@ -2,6 +2,7 @@
 <html>
   <head>
     <meta charset="UTF-8" />
+     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <title>sBread Out!</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -17,7 +18,7 @@
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-      
+
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto mx-auto">
             <li class="nav-item mx-3">
@@ -53,8 +54,8 @@
           </ul>
           <div class="serarch_box form-inline my-2 my-lg-0">
             <%= search_form_for @search, url: articles_path do |f| %>
-              <%= f.text_field :body_cont, placeholder: "キーワードを入力", class:"form-control mr-sm-2" %>
-              <%= f.submit ("検索") , class: 'btn-outline-success btn search-btn my-2 my-sm-0'%>
+              <%= f.search_field :body_cont, placeholder: "キーワードを入力", class:"form-control mr-sm-2" %>
+              <%= f.submit "検索", class:'btn-outline-success btn search-btn my-2 my-sm-0'%>
             <% end %>
           </div>
         </div>

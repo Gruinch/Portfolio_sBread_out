@@ -200,3 +200,13 @@ footer {
 .unsubscribe-button {
   margin: 15px;
 }
+
+/*以下レスポンシブ対応*/
+@media screen and (max-width: 425px) {
+.profile-element{
+  justify-content: center;
+}
+
+
+
+}
