@@ -71,3 +71,4 @@ gem "refile-mini_magick"
 gem "geocoder"
 gem "dotenv-rails"
 gem 'pry-rails'
+gem "ransack"

@@ -48,10 +48,12 @@
               </div>
             </li>
           </ul>
-          <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-          </form>
+          <div class="serarch_box form-inline my-2 my-lg-0">
+            <%= search_form_for @search, url: articles_path do |f| %>
+              <%= f.text_field :body_cont, placeholder: "キーワードを入力", class:"form-control mr-sm-2" %>
+              <%= f.submit ("検索") , class: 'search-btn my-2 my-sm-0'%>
+            <% end %>
+          </div>
         </div>
       </nav>
     </header>

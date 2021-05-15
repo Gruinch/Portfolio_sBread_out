@@ -10,4 +10,11 @@ class ApplicationController < ActionController::Base
   def after_sign_in_path_for(resoure)
     user_path(current_user)
   end
+  
+  before_action :set_search
+  
+  def set_search
+    @search = Article.ransack(params[:q])
+    @articles = @search.result(distinct: true)
+  end
 end
