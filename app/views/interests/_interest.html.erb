@@ -2,18 +2,18 @@
     <% if current_user.already_interested?(@article) %>
       <%= link_to article_interest_path(@article, @interest), method: :delete, remote: true do %>
         <i class="fas fa-plus-square" aria-hidden="true" style="color: tomato;">
-          <%= @article.interests.count %>
+          <%= @article.interests.count %>キニナル
         </i>
     <% end %>
   <% else %>
     <%= link_to article_interests_path(@article), method: :post, remote: true do %>
       <i class="fas fa-plus-square" aria-hidden="true" style="color: darkgray;">
-        <%= @article.interests.count %>
+        <%= @article.interests.count %>キニナル
       </i>
     <% end %>
   <% end %>
   <% else %>
     <i class="fas fa-plus-square" aria-hidden="true">
-      <%= @article.interests.count %>
+      <%= @article.interests.count %>キニナル
     </i>
   <% end %>

@@ -69,7 +69,7 @@ footer {
 .contents-header {
   background-color:rgba(255,255,255,0.7);
   background-blend-mode:lighten;
-  background-image: url(about-background.jpg) ;
+  background-image: image-url("about-background.jpg");
   background-size: cover;
   background-position: center;
   height: 200px;

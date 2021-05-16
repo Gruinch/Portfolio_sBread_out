@@ -2,18 +2,18 @@
     <% if current_user.already_visited?(@article) %>
       <%= link_to article_visits_path(@article, @visit), method: :delete, remote: true do %>
         <i class="fas fa-bread-slice" aria-hidden="true" style="color: chocolate;" >
-          <%= @article.visits.count %>
+          <%= @article.visits.count %>イッタヨ
         </i>
     <% end %>
   <% else %>
     <%= link_to article_visits_path(@article), method: :post, remote: true do %>
       <i class="fas fa-bread-slice" aria-hidden="true" style="color: wheat;" >
-        <%= @article.visits.count %>
+        <%= @article.visits.count %>イッタヨ
       </i>
     <% end %>
   <% end %>
   <% else %>
     <i class="fas fa-plus-square" aria-hidden="true">
-      <%= @article.visits.count %>
+      <%= @article.visits.count %>イッタヨ
     </i>
   <% end %>
