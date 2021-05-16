@@ -73,3 +73,6 @@ gem "dotenv-rails"
 gem 'pry-rails'
 gem "ransack"
 gem 'i18n_generators'
+group :production do
+  gem 'mysql2'
+end
