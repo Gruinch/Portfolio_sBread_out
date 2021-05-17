@@ -7,6 +7,12 @@
         <p class="card-text"><%= article.body %></p>
         <hr />
         <p class="card-text">posted by<%= link_to article.user.name, user_path(article.user) %></p>
+        <i class="fas fa-bread-slice" aria-hidden="true" style="color: chocolate;">
+          <%= article.visits.count %>イッタヨ
+        </i>
+        <i class="fas fa-plus-square" aria-hidden="true" style="color: tomato;">
+          <%= article.interests.count %>キニナル
+        </i>
         <p class="card-text"><%= l article.created_at, format: :long %></p>
       </div>
     </div>
