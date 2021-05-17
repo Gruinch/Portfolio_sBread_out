@@ -45,13 +45,13 @@
   </div>
 
   <hr>
-  
+
     <article class="card article-body">
       <div class="card-body">
         <p class="article-body">
           <%= @article.body %>
         </p>
-        
+
         <hr>
 
         <div class="article-detail">
@@ -88,7 +88,7 @@
                   }
           </script>
       </div>
-      
+
           <hr>
           <div class="article-detail">
             <p class="article-body">
@@ -124,6 +124,9 @@
           </p>
           <p class="article-body">
             <%= l comments.created_at, format: :long %>
+            <% if comments.user == current_user %>
+              <%= link_to "削除", article_comment_path(comments.article.id, comments.id), method: :delete, class:"btn btn-outline-danger" %>
+            <% end %>
           </p>
           <hr />
           <% end %>
