@@ -201,9 +201,29 @@ footer {
   margin: 15px;
 }
 
+.article-map {
+  width:100%;
+  padding-top:50%;
+  position: relative;
+  margin:auto;
+  }
+
+.gmap {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  }
+
 /*以下レスポンシブ対応*/
 @media screen and (max-width: 425px) {
-.profile-element{
+.profile-element, .article-index, .article-detail,.article-new-field {
+  display: block;
+  justify-content: center;
+}
+
+.contents-main {
+  display: block;
   justify-content: center;
 }
 
