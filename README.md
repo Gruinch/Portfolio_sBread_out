@@ -37,7 +37,7 @@
 - 言語：HTML,CSS,JavaScript,Ruby,SQL
 - フレームワーク：Ruby on Rails
 - JSライブラリ：jQuery
-- 仮想環境：Vagrant,VirtualBox
+- 仮想環境：AWS Cloud9
 
 ## 使用素材
 - Google Maps API
