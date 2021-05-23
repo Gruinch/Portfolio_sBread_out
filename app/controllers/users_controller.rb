@@ -19,7 +19,7 @@ class UsersController < ApplicationController
     @user = current_user
     @articles = current_user.interests_articles
   end
-  
+
   def unsubscribe
     @user = current_user
   end

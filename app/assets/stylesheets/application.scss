@@ -16,7 +16,6 @@
 @import "bootstrap";
 @import 'font-awesome-sprockets';
 @import 'font-awesome';
-@import url('https://fonts.googleapis.com/css2?family=Itim&family=Kiwi+Maru&family=M+PLUS+Rounded+1c:wght@100&family=Pangolin&display=swap');
 
 * {
   margin: 0;
@@ -31,6 +30,8 @@ html {
 
 body {
   margin-bottom: 60px;
+  font-family: 'Kiwi Maru', serif;
+  font-family: 'Kosugi Maru', sans-serif;
 }
 
 main {
