@@ -2,6 +2,13 @@
     <div class="article-new-field">
       <h5>投稿フォーム</h5>
     </div>
+
+    <% if @article.errors.any? %>
+      <% @article.errors.full_messages.each do |message| %>
+        <%= message %>
+      <% end %>
+    <% end %>
+
     <%= form_with model:@article, local:true do |f| %>
     <div class="article-new-field">
       <label class="article-new-detail">店名<label>

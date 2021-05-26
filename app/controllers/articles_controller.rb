@@ -7,10 +7,11 @@ class ArticlesController < ApplicationController
   def create
     @article = Article.new(article_params)
     @article.user_id = current_user.id
+    @user = current_user
     if @article.save
       redirect_to article_path(@article)
     else
-      redirect_to new_article_path
+      render new_article_path
     end
   end
 
