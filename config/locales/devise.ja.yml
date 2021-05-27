@@ -1,0 +1,32 @@
+# Additional translations at https://github.com/heartcombo/devise/wiki/I18n
+
+ja:
+  devise:
+    failure:
+      already_authenticated: "すでにログイン済みです"
+      inactive: "アカウントが有効化されていません"
+      invalid: "%{authentication_keys} またはパスワードが異なります"
+      locked: "アカウントがロックされています"
+      last_attempt: "もう一度ログインに失敗すると、アカウントがロックされます"
+      not_found_in_database: "%{authentication_keys} またはパスワードが異なります"
+      timeout: "セッションが切れました。もう一度ログインしてください"
+      unauthenticated: "この操作をするにはログインが必要です"
+      unconfirmed: "この操作をするにはEメールの認証が必要です"
+    registrations:
+      destroyed: "退会しました。ご利用ありがとうございました！"
+      signed_up: "ようこそ。会員登録されました！"
+      updated: "アカウント情報がアップデートされました"
+    sessions:
+      signed_in: "おかえりなさい。ログインしました！"
+      signed_out: "ログアウトしました"
+      already_signed_out: "ログアウトしました"
+  errors:
+    messages:
+      already_confirmed: "was already confirmed, please try signing in"
+      confirmation_period_expired: "needs to be confirmed within %{period}, please request a new one"
+      expired: "has expired, please request a new one"
+      not_found: "not found"
+      not_locked: "was not locked"
+      not_saved:
+        one: "エラーです:"
+        other: "%{count} つのエラーが起こりました:"
