@@ -4,6 +4,7 @@
 
 <div  class="profile-main">
 <div class="profile-element">
+  <p class="notice"><%= notice %></p>
   <div class="profile_img">
   <%= attachment_image_tag @user, :profile_img, fallback: "Profile_no_image.png", size: "100x100", class:"rounded-circle"%>
   </div>

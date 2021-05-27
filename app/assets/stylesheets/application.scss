@@ -38,6 +38,18 @@ body {
   display: contents;
 }
 
+#error_explanation, .alert {
+  background-color: #ffb6c1;
+  margin: 5px;
+}
+
+.notice {
+  background-color: #90ee90;
+}
+
+ul {
+  list-style: none;
+}
 main {
   width: 100%;
   padding-top: 70px;
