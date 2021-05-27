@@ -34,6 +34,10 @@ body {
   font-family: 'Kosugi Maru', sans-serif;
 }
 
+.field_with_errors {
+  display: contents;
+}
+
 main {
   width: 100%;
   padding-top: 70px;
