@@ -5,7 +5,7 @@ ja:
     failure:
       already_authenticated: "すでにログイン済みです"
       inactive: "アカウントが有効化されていません"
-      invalid: "%{authentication_keys} またはパスワードが異なります"
+      invalid: "%{authentication_keys} またはPasswordが異なります"
       locked: "アカウントがロックされています"
       last_attempt: "もう一度ログインに失敗すると、アカウントがロックされます"
       not_found_in_database: "%{authentication_keys} またはPasswordが異なります"
