@@ -27,9 +27,10 @@ class UsersController < ApplicationController
   def withdraw
     @user = current_user
     @user.id = current_user.id
+    if @articles = Article.find_by(user_id: @user.id)
+        @articles.destroy
+    end
     @user.update(is_deleted: true)
-    @articles = Article.find_by(user_id: @user.id)
-    @articles.destroy
     reset_session
     redirect_to root_path
   end
