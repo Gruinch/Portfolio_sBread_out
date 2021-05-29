@@ -1,8 +1,10 @@
- <div class="contents-header">
+<div class="contents-header">
   <h1>みんなの投稿</h1>
 </div>
 
-<article class="article-index">
-  <%= render "articles/articles_card",articles: @articles %>
-</article>
-  <%= paginate @articles %>
+<div class="article-index-main">
+    <article class="article-index">
+      <%= render "articles/articles_card",articles: @articles %>
+    </article>
+      <%= paginate @articles %>
+</div>
