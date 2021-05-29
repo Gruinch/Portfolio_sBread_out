@@ -16,9 +16,10 @@ class ArticlesController < ApplicationController
   end
 
   def index
-    @articles = Article.all
+    @articles = Article.page(params[:page]).reverse_order
     if @search
     @articles = @search.result(distinct: true)
+    @articles = @articles.page(params[:page])
     end
   end
 
