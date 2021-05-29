@@ -5,7 +5,7 @@
   <%= form_with model:@user, local:true do |f| %>
   <div class="profile-element">
     <label class="profile-detail">プロフィール写真</label>
-    <div class="image-show"><%= attachment_image_tag @user, :profile_img, fallback: "no_image.jpg", size:"100x100", class:"rounded-circle" %></div>
+    <div class="image-show"><%= attachment_image_tag @user, :profile_img, fallback: "Profile_no_image.png", size:"100x100", class:"rounded-circle" %></div>
   </div>
     <div class="image-field"><%= f.attachment_field :profile_img %></div>
   <div class="profile-element">
@@ -23,6 +23,7 @@
   <div class="submit-button">
     <%= f.submit "変更を保存", class:"btn btn-outline-success" %>
     <%= link_to "退会する",confirm_unsubscribe_users_path, class:"btn btn-outline-danger" %>
+    <%= link_to "プロフィールに戻る", user_path(@user), class:"btn btn-outline-primary" %>
   </div>
   <% end %>
 </div>
