@@ -4,9 +4,12 @@
     </div>
 
     <% if @article.errors.any? %>
-      <% @article.errors.full_messages.each do |message| %>
-        <%= message %>
+    <div class="article-new-field alert">
+      <ul><% @article.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
       <% end %>
+      </ul>
+    </div>
     <% end %>
 
     <%= form_with model:@article, local:true do |f| %>
