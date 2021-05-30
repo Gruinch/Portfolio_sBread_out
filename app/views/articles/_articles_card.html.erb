@@ -1,4 +1,4 @@
-    <% articles.each do |article| %>
+  <% articles.each do |article| %>
     <div class="card article-card">
       <%= attachment_image_tag article, :post_img, fallback: "article_no_image.png", size:"150x150", class:"card-img-top" %>
       <div class="card-body">
@@ -16,4 +16,4 @@
         <p class="card-text"><%= l article.created_at, format: :long %></p>
       </div>
     </div>
-  <% end %>
+    <% end %>

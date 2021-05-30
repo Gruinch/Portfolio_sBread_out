@@ -24,6 +24,9 @@ Rails.application.routes.draw do
     resources :comments, only: [:create, :destroy]
     resources :interests, only: [:create, :destroy]
     resource :visits, only: [:create, :destroy]
+    collection do
+      get :search_result
+    end
   end
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

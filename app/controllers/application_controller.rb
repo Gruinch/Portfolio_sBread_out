@@ -15,6 +15,7 @@ class ApplicationController < ActionController::Base
 
   def set_search
     @search = Article.ransack(params[:q])
+    @search_articles = @search.result.page(params[:page])
   end
 
 end
