@@ -20,7 +20,6 @@ class ArticlesController < ApplicationController
   end
 
   def search_result
-    
   end
 
   def show
