@@ -238,6 +238,12 @@ footer {
   top: 0;
   }
 
+  /*フォロー・フォロワー一覧*/
+  .users-relationships {
+    width: 60%;
+    margin: 0 auto;
+  }
+
 /*以下レスポンシブ対応*/
 @media screen and (max-width: 425px) {
 .profile-element, .article-index, .article-detail,.article-new-field {

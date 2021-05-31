@@ -13,7 +13,7 @@ Rails.application.routes.draw do
       get :interests
     end
      member do
-      get :following, :followers
+      get :following, :followers, :timeline
     end
 
   end

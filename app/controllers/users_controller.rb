@@ -35,16 +35,20 @@ class UsersController < ApplicationController
     redirect_to root_path
   end
 
-  def following
+  def timeline
     @user = User.find(params[:id])
     @users = @user.following
     @articles = Article.where(user_id: [current_user.id, *current_user.following_ids]).order(created_at: :desc)
   end
 
+  def following
+    @user = User.find(params[:id])
+    @users = @user.following
+  end
+
   def followers
     @user = User.find(params[:id])
     @users = @user.followers
-    render 'show_follower'
   end
 
 private

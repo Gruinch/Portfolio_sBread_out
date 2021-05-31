@@ -17,9 +17,9 @@
 </div>
 <hr class="cp_hr02 profile-element" />
 <div class="profile-element">
-  <label class="profile-detail">フォロワー</label>
+  <%= link_to "Followers", followers_user_path(@user), class:"profile-detail" %>
   <div class="profile-detail"><%= @user.followers.count %>人</div>
-  <label class="profile-detail">フォロー</label>
+  <%= link_to "Followings", following_user_path(@user), class:"profile-detail" %>
   <div class="profile-detail"><%= @user.following.count %>人</div>
 </div>
 <hr class="cp_hr02 profile-element" />
