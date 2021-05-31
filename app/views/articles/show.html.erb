@@ -100,16 +100,12 @@
           </div>
           <div class="article-detail">
             <!--気になるボタン-->
-            <div id="interests_button_<%= @article.id %>">
-              <p class="article-body">
+            <div id="interests_button_<%= @article.id %>" class="article-body  article-button">
                 <%= render 'interests/interest', locals: { article: @article, interest: @interest } %>
-              </p>
             </div>
             <!--行ったよボタン-->
-            <div id="visits_button_<%= @article.id %>">
-              <p class="article-body">
+            <div id="visits_button_<%= @article.id %>" class="article-body  article-button">
                 <%= render 'visits/visit', locals: { article: @article, visit: @visit } %>
-              </p>
             </div>
           </div>
           <div class="comments">
