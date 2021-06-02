@@ -1,4 +1,4 @@
 <!--フォロー解除ボタン-->
 <%= form_with url: relationship_path(@user), method: :delete, remote: true do |f| %>
-  <%= f.submit "フォローをやめる", class: "btn btn-outline-secondary" %>
+  <div class="profile-detail"><%= f.submit "フォローをやめる", class: "btn btn-outline-secondary" %></div>
 <% end %>
