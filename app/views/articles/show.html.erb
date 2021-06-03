@@ -118,10 +118,10 @@
           <p class="article-body">
             <%= comments.body %>
           </p>
-          <p class="article-body">
+          <p class="article-body posted-dates">
             <%= l comments.created_at, format: :long %>
             <% if comments.user == current_user %>
-              <%= link_to "削除", article_comment_path(comments.article.id, comments.id), method: :delete, class:"btn btn-outline-danger" %>
+              <%= link_to "", article_comment_path(comments.article.id, comments.id), method: :delete, class:"btn btn-outline-danger fas fa-trash-alt" %>
             <% end %>
           </p>
           <hr />
@@ -131,7 +131,7 @@
       </article>
     <div class="new-comment">
       <%= form_with(model:[@article, @comment], local: true) do |f| %>
-        <%= f.text_area :body, rows:'5',placeholder: "コメントをここに",maxlength:"150", class:"form-control" %>
+        <%= f.text_area :body, rows:'5',placeholder: "コメントをする（500文字以内）",maxlength:"500", class:"form-control" %>
         <%= f.submit "送信する", class:"btn btn-success" %>
       <% end %>
       <% if @comment.errors.any? %>
