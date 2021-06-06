@@ -108,30 +108,14 @@
                 <%= render 'visits/visit', locals: { article: @article, visit: @visit } %>
             </div>
           </div>
-          <div class="comments">
-          <p>コメント件数：<%= @article.comments.count %></p>
-          <hr />
-          <% @article.comments.each do |comments| %>
-          <p class="article-body">
-            <%= link_to comments.user.name, user_path(comments.user)%>
-          </p>
-          <p class="article-body">
-            <%= comments.body %>
-          </p>
-          <p class="article-body posted-dates">
-            <%= l comments.created_at, format: :long %>
-            <% if comments.user == current_user %>
-              <%= link_to "", article_comment_path(comments.article.id, comments.id), method: :delete, class:"btn btn-outline-danger fas fa-trash-alt" %>
-            <% end %>
-          </p>
-          <hr />
-          <% end %>
+          <div id="comments">
+            <%= render 'comments/index', comments: @comments %>
           </div>
         </div>
       </article>
     <% if user_signed_in? %>
       <div class="new-comment">
-        <%= render 'comments' %>
+        <%= render 'comments/new', comment: @comment, article: @article %>
         <% if @comment.errors.any? %>
           <ul>
             <% @comment.errors.full_messages.each do |message| %>
