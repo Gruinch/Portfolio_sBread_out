@@ -11,7 +11,7 @@ class User < ApplicationRecord
  has_many :interests_articles, through: :interests, source: :article
  has_many :visits, dependent: :destroy
 
- validates :introduction, presence: true, length: { maximum: 50 }
+ validates :introduction, length: { maximum: 50 }
 
  #following機能について
 # フォロ-

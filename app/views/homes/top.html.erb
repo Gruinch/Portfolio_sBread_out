@@ -1,4 +1,5 @@
 <div class="about">
+<p class="notice"><%= notice %></p>
   <div class="about-heading">
     <h5>このサイトについて</h5>
   </div>
@@ -8,7 +9,7 @@
           気になる登録機能が使えるようになります。</br>
           あなたのお気に入りのパン屋さんをみんなとシェアしませんか？
     </p>
-    
+
   <% if user_signed_in? %>
     <div class="about-link">
       <a class="btn btn-success" href="/articles/new">新規投稿する</a>

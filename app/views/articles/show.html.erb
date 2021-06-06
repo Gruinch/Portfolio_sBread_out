@@ -129,19 +129,18 @@
           </div>
         </div>
       </article>
-    <div class="new-comment">
-      <%= form_with(model:[@article, @comment], local: true) do |f| %>
-        <%= f.text_area :body, rows:'5',placeholder: "コメントをする（500文字以内）",maxlength:"500", class:"form-control" %>
-        <%= f.submit "送信する", class:"btn btn-success" %>
-      <% end %>
-      <% if @comment.errors.any? %>
-        <ul>
-          <% @comment.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-          <% end %>
-        </ul>
-      <% end %>
-    </div>
+    <% if user_signed_in? %>
+      <div class="new-comment">
+        <%= render 'comments' %>
+        <% if @comment.errors.any? %>
+          <ul>
+            <% @comment.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+            <% end %>
+          </ul>
+        <% end %>
+      </div>
+    <% end %>
 
       <script async defer
         src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['GOOGLE_MAP_API_KEY'] %>&callback=initMap">
