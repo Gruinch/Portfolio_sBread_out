@@ -1,3 +1,4 @@
+<p>コメント件数：<%= comments.count %></p>
 <hr />
   <% comments.each do |comments| %>
   <p class="article-body">
@@ -9,7 +10,7 @@
   <p class="article-body posted-dates">
     <%= l comments.created_at, format: :long %>
     <% if comments.user == current_user %>
-      <%= link_to article_comment_path(comments.article.id, comments.id), method: :delete, remote: true, data: {confirm: "コメント削除しますか？"} do %>
+      <%= link_to article_comment_path(comments.article.id, comments.id), method: :delete, remote: true, data: {confirm: "コメントを削除しますか？"} do %>
         <i class="fas fa-trash-alt" style="color: crimson;"></i>
       <% end %>
     <% end %>
