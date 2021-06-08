@@ -24,7 +24,7 @@ class ArticlesController < ApplicationController
 
   def show
     @article = Article.find(params[:id])
-    @comments = @article.comments
+    @comments = @article.comments.page(params[:page])
     if user_signed_in?
       @interest = Interest.find_by(user_id: current_user.id, article_id: @article.id)
       @visit = Visit.find_by(user_id: current_user.id, article_id: @article.id)

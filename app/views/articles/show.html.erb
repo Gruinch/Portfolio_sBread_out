@@ -108,6 +108,7 @@
                 <%= render 'visits/visit', locals: { article: @article, visit: @visit } %>
             </div>
           </div>
+          <p>コメント件数：<%= @comments.count %></p>
           <div id="comments">
             <%= render 'comments/index', comments: @comments %>
           </div>
