@@ -2,6 +2,9 @@
 <p class="notice"><%= notice %></p>
 
   <% if user_signed_in? %>
+    <div class="about-heading">
+      <h5><%= current_user.name %>さんようこそ</h5>
+    </div>
     <div class="about-link">
       <a class="btn btn-success" href="/articles/new">新規投稿する</a>
     </div>
