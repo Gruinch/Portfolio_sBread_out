@@ -1,9 +1,4 @@
-  <div class="contents-bottom">
-    <div class="article-new-field">
-      <h5>投稿フォーム</h5>
-    </div>
-
-    <% if @article.errors.any? %>
+  <% if @article.errors.any? %>
     <div class="article-new-field alert">
       <ul><% @article.errors.full_messages.each do |message| %>
         <li><%= message %></li>
@@ -14,15 +9,9 @@
 
     <%= form_with model:@article, local:true do |f| %>
     <div class="article-new-field">
-      <label class="article-new-detail">店名<label>
+      <label class="article-new-detail">店名</label>
         <div class="article-new-detail">
           <%= f.text_field :title, class:"form-control" %>
-        </div>
-    </div>
-    <div class="article-new-field">
-      <label class="article-new-detail">本文</label>
-        <div class="article-new-detail">
-          <%= f.text_area :body, class:"form-control", placeholder:"おすすめのパンや、お店の雰囲気など投稿してみましょう！" %>
         </div>
     </div>
     <div class="article-new-field">
@@ -53,8 +42,14 @@
           <%= f.attachment_field :post_img %>
         </div>
     </div>
-  <div class="submit-button">
-    <%= f.submit '投稿する', class:"btn btn-outline-primary" %>
+    <div class="article-new-field">
+      <label class="article-new-detail">本文</label>
+        <div class="article-new-detail">
+          <%= f.text_area :body, class:"form-control", placeholder:"おすすめのパンや、お店の雰囲気など投稿してみましょう！" %>
+        </div>
     </div>
-  </div>
-    <% end %>
+
+    <div class="submit-button">
+      <%= f.submit '投稿する', class:"btn btn-primary" %>
+    </div>
+  <% end %>
