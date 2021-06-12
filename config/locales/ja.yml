@@ -1,6 +1,14 @@
 ---
 ja:
   activerecord:
+    models:
+      article:
+    attributes:
+       article:
+          title: "店名"
+          body: "本文"
+          address: "住所"
+          post_img: "投稿画像"
     errors:
       messages:
         record_invalid: 'バリデーションに失敗しました: %{errors}'
