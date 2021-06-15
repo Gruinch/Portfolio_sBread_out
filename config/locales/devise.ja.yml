@@ -2,6 +2,16 @@
 
 ja:
   devise:
+    activerecord:
+      models:
+        user:
+      attributes:
+        user:
+          name: "ユーザー名"
+          email: "メールアドレス"
+          encrypted_password: "パスワード"
+          introduction: "自己紹介分"
+          profile_img: "プロフィール画像"
     failure:
       already_authenticated: "すでにログイン済みです"
       inactive: "アカウントが有効化されていません"
