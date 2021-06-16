@@ -1,7 +1,7 @@
 <div class="contents-header">
   <h1>プロフィール編集</h1>
 </div>
-<div class="profile-main">
+<div class="profile-main profile-edit">
   <%= form_with model:@user, local:true do |f| %>
   <div class="profile-element">
     <label class="profile-detail">プロフィール写真</label>
@@ -21,9 +21,9 @@
     </div>
   </div>
   <div class="submit-button">
-    <%= f.submit "変更を保存", class:"btn btn-outline-success" %>
-    <%= link_to "退会する",confirm_unsubscribe_users_path, class:"btn btn-outline-danger" %>
-    <%= link_to "プロフィールに戻る", user_path(@user), class:"btn btn-outline-primary" %>
+    <%= f.submit "変更を保存", class:"btn btn-success" %>
+    <%= link_to "退会する",confirm_unsubscribe_users_path, class:"btn btn-danger" %>
+    <%= link_to "プロフィールに戻る", user_path(@user), class:"btn btn-primary" %>
   </div>
   <% end %>
 </div>
