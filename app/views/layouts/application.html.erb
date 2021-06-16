@@ -54,7 +54,7 @@
           <div class="serarch_box form-inline my-2 my-lg-0">
             <%= search_form_for @search, url: search_result_articles_path do |f| %>
               <%= f.search_field :body_cont, placeholder: "キーワードを入力", class:"form-control mr-sm-2" %>
-              <%= f.submit "検索", class:'btn-outline-success btn search-btn my-2 my-sm-0'%>
+              <%= f.submit class:'btn-primary btn search-btn my-2 my-sm-0'%>
             <% end %>
           </div>
         </div>
