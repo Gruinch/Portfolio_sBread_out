@@ -5,8 +5,12 @@ class CommentsController < ApplicationController
     @article = Article.find(params[:article_id])
     comment = current_user.comments.new(comment_params)
     comment.article_id = @article.id
-    comment.save
-    render :index
+    if comment.save
+      render :index
+    else
+      flash[:notice] = "コメントの投稿に失敗しました"
+      render :index
+    end
   end
 
   def destroy

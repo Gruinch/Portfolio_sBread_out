@@ -116,13 +116,6 @@
     <% if user_signed_in? %>
       <div class="new-comment">
         <%= render 'comments/new', comment: @comment, article: @article %>
-        <% if @comment.errors.any? %>
-          <ul>
-            <% @comment.errors.full_messages.each do |message| %>
-            <li><%= message %></li>
-            <% end %>
-          </ul>
-        <% end %>
       </div>
     <% end %>
 
