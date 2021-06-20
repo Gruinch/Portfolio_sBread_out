@@ -1,11 +1,13 @@
   <% if @comment.errors.any? %>
-    <ul>
-      <% @comment.errors.full_messages.each do |message| %>
-      <li><%= message %></li>
-      <% end %>
-    </ul>
+    <div id="error_explanation">
+      <ul>
+        <% @comment.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
   <% end %>
   <%= form_with(model:[article, comment], url: article_comments_path(@article) ) do |f| %>
-    <%= f.text_area :body, rows:'5',placeholder: "コメントをする（500文字以内）",maxlength:"500", class:"form-control" %>
+    <%= f.text_area :body, rows:'5',placeholder: "コメントをする（150文字以内）",maxlength:"150", class:"form-control" %>
     <%= f.submit "送信する", class:"btn btn-success" %>
   <% end %>

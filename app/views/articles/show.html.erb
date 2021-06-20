@@ -114,6 +114,8 @@
         </div>
       </article>
     <% if user_signed_in? %>
+      <div id="error_explanation">
+      </div>
       <div class="new-comment">
         <%= render 'comments/new', comment: @comment, article: @article %>
       </div>

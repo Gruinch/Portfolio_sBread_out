@@ -9,6 +9,11 @@ ja:
           body: "本文"
           address: "住所"
           post_img: "投稿画像"
+    models:
+      comment:
+    attributes:
+        comment:
+          body: "本文"
     errors:
       messages:
         record_invalid: 'バリデーションに失敗しました: %{errors}'
