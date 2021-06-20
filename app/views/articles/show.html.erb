@@ -51,8 +51,10 @@
         <p class="article-body">
           <%= @article.body %>
         </p>
-
-        <hr>
+        <p class="article-body">
+          <%= l @article.created_at, format: :long %>
+        </p>
+  <hr>
 
         <div class="article-detail">
           <p class="article-body">
@@ -90,14 +92,6 @@
       </div>
 
           <hr>
-          <div class="article-detail">
-            <p class="article-body">
-              投稿日
-            </p>
-            <p class="article-body">
-              <%= l @article.created_at, format: :long %>
-            </p>
-          </div>
           <div class="article-detail">
             <!--気になるボタン-->
             <div id="interests_button_<%= @article.id %>" class="article-body  article-button">
