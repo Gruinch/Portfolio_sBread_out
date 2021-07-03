@@ -6,11 +6,11 @@
     <table class="table table-borderless">
       <tbody>
         <tr>
-          <th scope="row">店名</th>
+          <th scope="row" class="badge badge-info">店名</th>
           <td><%= @article.title %></td>
         </tr>
         <tr>
-          <th scope="row">評価</th>
+          <th scope="row" class="badge badge-info">評価</th>
           <td><div id="star-<%= @article.id %>"></div>
           </td>
             <!--評価表示-->
@@ -28,7 +28,7 @@
 
         </tr>
         <tr>
-          <th scope="row">投稿者</th>
+          <th scope="row" class="badge badge-info">投稿者</th>
           <td><%= link_to @article.user.name, user_path(@article.user) %></td>
         </tr>
         <% if @article.user == current_user %>
@@ -57,7 +57,7 @@
   <hr>
 
         <div class="article-detail">
-          <p class="article-body">
+          <p class="article-body badge badge-info">
             住所
           </p>
           <p class="article-body">
